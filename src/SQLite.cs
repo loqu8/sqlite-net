@@ -3225,7 +3225,13 @@ namespace SQLite
 			Serialized = 3
 		}
 
-		const string LibraryPath = "sqlite3";
+#if USE_SQLITE_INTERNAL
+        const string LibraryPath = "__Internal";
+#elif USE_SQLITE_XSQLITE3
+        const string LibraryPath = "xsqlite3";
+#else
+        const string LibraryPath = "sqlite3";
+#endif
 
 #if !USE_CSHARP_SQLITE && !USE_WP8_NATIVE_SQLITE && !USE_SQLITEPCL_RAW
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_threadsafe", CallingConvention=CallingConvention.Cdecl)]
@@ -3391,7 +3397,7 @@ namespace SQLite
 		[DllImport (LibraryPath, EntryPoint = "sqlite3_libversion_number", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int LibVersionNumber ();
 #else
-		public static Result Open(string filename, out Sqlite3DatabaseHandle db)
+        public static Result Open(string filename, out Sqlite3DatabaseHandle db)
 		{
 			return (Result) Sqlite3.sqlite3_open(filename, out db);
 		}
