@@ -3234,6 +3234,13 @@ namespace SQLite
 #endif
 
 #if !USE_CSHARP_SQLITE && !USE_WP8_NATIVE_SQLITE && !USE_SQLITEPCL_RAW
+#if USE_SQLITE_XSQLITE3
+		[DllImport(dllPath, EntryPoint = "sqlite3_activate_cerod", CallingConvention = CallingConvention.Cdecl)]
+		public static extern void Activate_Cerod(byte[] passPhrase);
+
+		[DllImport(dllPath, EntryPoint = "sqlite3_activate_see", CallingConvention = CallingConvention.Cdecl)]
+		public static extern void Activate_See(byte[] passPhrase);
+#endif
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_threadsafe", CallingConvention=CallingConvention.Cdecl)]
 		public static extern int Threadsafe ();
 
