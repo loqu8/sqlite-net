@@ -2207,6 +2207,7 @@ namespace SQLite
 	{
 		SQLiteConnection _conn;
 		private List<Binding> _bindings;
+		private Dictionary<string, Binding> _namedBindings;
 
 		public string CommandText { get; set; }
 
@@ -2214,6 +2215,7 @@ namespace SQLite
 		{
 			_conn = conn;
 			_bindings = new List<Binding> ();
+			_namedBindings = new Dictionary<string, Binding> ();
 			CommandText = "";
 		}
 
@@ -2344,10 +2346,32 @@ namespace SQLite
 
 		public void Bind (string name, object val)
 		{
-			_bindings.Add (new Binding {
-				Name = name,
-				Value = val
-			});
+			if (!string.IsNullOrEmpty(name))
+			{
+				if (!_namedBindings.ContainsKey(name))
+				{
+					var b = new Binding
+					{
+						Name = name,
+						Value = val
+					};
+
+					_namedBindings.Add(name, b);
+					_bindings.Add(b);
+				}
+				else
+				{
+					_namedBindings[name].Value = val;
+				}
+			}
+			else
+			{
+				_bindings.Add(new Binding
+				{
+					Name = name,
+					Value = val
+				});
+			}
 		}
 
 		public void Bind (object val)
