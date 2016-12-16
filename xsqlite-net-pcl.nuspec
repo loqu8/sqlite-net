@@ -7,7 +7,7 @@
     <licenseUrl>https://raw.githubusercontent.com/praeclarum/sqlite-net/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/praeclarum/sqlite-net</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/praeclarum/sqlite-net/master/nuget/Logo-low.png</iconUrl>
-    <id>xsqlite-net-pcl</id>
+    <id>sqlite-net-pcl</id>
     <title>SQLite-net PCL</title>
     <summary>The official portable version of sqlite-net: the easy way to access sqlite from .NET apps.</summary>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -24,7 +24,7 @@
   </metadata>
   <files>
     <file src="nuget/SQLite-net/bin/Release/SQLite-net.dll" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
-    <file src="nuget/SQLite-net/bin/Release/SQLite-net.dll.mdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <!--<file src="nuget/SQLite-net/bin/Release/SQLite-net.dll.mdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />-->
     <file src="nuget/SQLite-net/bin/Release/SQLite-net.xml" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
   </files>
 </package>
