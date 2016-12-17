@@ -40,13 +40,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="..\src\SQLite.cs" />
-    <Compile Include="..\src\SQLiteAsync.cs">
+    <Compile Include="..\..\src\SQLite.cs" />
+    <Compile Include="..\..\src\SQLiteAsync.cs">
       <Link>SQLiteAsync.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\sqlite3.dll">
+    <Content Include="..\..\sqlite3.dll">
       <Link>sqlite3.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -54,5 +54,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="SQLite.Tests.Shared\SQLite.Tests.Shared.projitems" Label="Shared" />
+  <Import Project="..\SQLite.Tests.Shared\SQLite.Tests.Shared.projitems" Label="Shared" />
 </Project>
