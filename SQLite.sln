@@ -26,6 +26,7 @@ Global
 		tests\SQLite.Tests.Shared\SQLite.Tests.Shared.projitems*{6021256d-e0af-40b4-ae7b-4245a69b917e}*SharedItemsImports = 13
 		tests\SQLite.Tests.Shared\SQLite.Tests.Shared.projitems*{6947a8f1-99be-4dd1-ad4d-d89425ce67a2}*SharedItemsImports = 4
 		tests\SQLite.Tests.Shared\SQLite.Tests.Shared.projitems*{81850129-71c3-40c7-a48b-aa5d2c2e365e}*SharedItemsImports = 4
+		tests\SQLite.Tests.Shared\SQLite.Tests.Shared.projitems*{c92906f4-facd-4b54-9fd3-c2229e7e4df0}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
