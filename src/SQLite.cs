@@ -3662,9 +3662,10 @@ namespace SQLite
 
 		public static Sqlite3Statement Prepare2(Sqlite3DatabaseHandle db, ref string query)
 		{
+			string tail;
 			Sqlite3Statement stmt = default(Sqlite3Statement);
 #if USE_WP8_NATIVE_SQLITE || USE_SQLITEPCL_RAW
-			var r = Sqlite3.sqlite3_prepare_v2(db, query, out stmt);
+			var r = Sqlite3.sqlite3_prepare_v2(db, query, out stmt, out tail);
 #else
 			stmt = new Sqlite3Statement();
 			var r = Sqlite3.sqlite3_prepare_v2(db, query, System.Text.Encoding.UTF8.GetByteCount(query), ref stmt, 0);
@@ -3673,6 +3674,8 @@ namespace SQLite
 			{
 				throw SQLiteException.New((Result)r, GetErrmsg(db));
 			}
+			query = tail;
+
 			return stmt;
 		}
 
