@@ -2016,7 +2016,7 @@ namespace SQLite
 		}
 	}
 
-    internal class EnumCacheInfo
+    public class EnumCacheInfo
     {
         public EnumCacheInfo(Type type)
         {
@@ -2047,7 +2047,7 @@ namespace SQLite
         public Dictionary<int, string> EnumValues { get; private set; }
     }
 
-    internal static class EnumCache
+    public static class EnumCache
     {
         private static readonly Dictionary<Type, EnumCacheInfo> Cache = new Dictionary<Type, EnumCacheInfo>();
 
@@ -3621,6 +3621,11 @@ namespace SQLite
 		[DllImport (LibraryPath, EntryPoint = "sqlite3_libversion_number", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int LibVersionNumber ();
 #else
+        public static int LibVersionNumber()
+        {
+            return Sqlite3.sqlite3_libversion_number();
+        }
+
         public static Result Open(string filename, out Sqlite3DatabaseHandle db)
 		{
 			return (Result) Sqlite3.sqlite3_open(filename, out db);

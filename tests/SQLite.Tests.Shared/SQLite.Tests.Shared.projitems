@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6021256d-e0af-40b4-ae7b-4245a69b917e</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SQLite.Tests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AsyncTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BooleanTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ByteArrayTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CollateTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ContainsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CreateTableImplicitTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CreateTableTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateTimeOffsetTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateTimeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeleteTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DropTableTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnumCacheTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnumTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EqualsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExceptionAssert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GuidTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IgnoreTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InheritanceTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InsertTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JoinTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LinqTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MappingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MigrationTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotNullAttributeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NullableTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScalarTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SkipTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringQueryTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TableChangedTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestDb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnicodeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UniqueTest.cs" />
+  </ItemGroup>
+</Project>
