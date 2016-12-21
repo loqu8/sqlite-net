@@ -238,7 +238,7 @@ namespace SQLite
 			
 			BusyTimeout = TimeSpan.FromSeconds (0.1);
 		}
-		
+
 #if __IOS__
 		static SQLiteConnection ()
 		{
@@ -266,6 +266,11 @@ namespace SQLite
         }
 #endif
 
+		public void Interrupt()
+		{
+			SQLite3.Interrupt(Handle);
+		}
+
 #if !USE_SQLITEPCL_RAW
 		static byte[] GetNullTerminatedUtf8 (string s)
 		{
@@ -276,7 +281,7 @@ namespace SQLite
 		}
 #endif
 
-        /// <summary>
+		/// <summary>
 		/// Sets a busy handler to sleep the specified amount of time when a table is locked.
 		/// The handler will sleep multiple times until a total time of <see cref="BusyTimeout"/> has accumulated.
 		/// </summary>

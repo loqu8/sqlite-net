@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <version>1.2.1</version>
-    <authors>Frank A. Krueger</authors>
+    <authors>Loqu8, Frank A. Krueger</authors>
     <owners>Frank A. Krueger</owners>
     <licenseUrl>https://raw.githubusercontent.com/praeclarum/sqlite-net/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/praeclarum/sqlite-net</projectUrl>
