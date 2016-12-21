@@ -3535,6 +3535,9 @@ namespace SQLite
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_last_insert_rowid", CallingConvention=CallingConvention.Cdecl)]
 		public static extern long LastInsertRowid (IntPtr db);
 
+		[DllImport(dllPath, EntryPoint = "sqlite3_interrupt", CallingConvention = CallingConvention.Cdecl)]
+		public static extern void Interrupt(IntPtr db);
+
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_errmsg16", CallingConvention=CallingConvention.Cdecl)]
 		public static extern IntPtr Errmsg (IntPtr db);
 
@@ -3621,7 +3624,7 @@ namespace SQLite
 		[DllImport (LibraryPath, EntryPoint = "sqlite3_libversion_number", CallingConvention = CallingConvention.Cdecl)]
 		public static extern int LibVersionNumber ();
 #else
-        public static int LibVersionNumber()
+		public static int LibVersionNumber()
         {
             return Sqlite3.sqlite3_libversion_number();
         }
@@ -3827,6 +3830,11 @@ namespace SQLite
 			return (Result)Sqlite3.sqlite3_enable_load_extension(db, onoff);
 		}
 #endif
+
+		public static void Interrupt(Sqlite3DatabaseHandle db)
+		{
+			Sqlite3.sqlite3_interrupt(db);
+		}
 
 		public static ExtendedResult ExtendedErrCode(Sqlite3DatabaseHandle db)
 		{
