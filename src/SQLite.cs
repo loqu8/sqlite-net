@@ -3540,7 +3540,7 @@ namespace SQLite
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_last_insert_rowid", CallingConvention=CallingConvention.Cdecl)]
 		public static extern long LastInsertRowid (IntPtr db);
 
-		[DllImport(dllPath, EntryPoint = "sqlite3_interrupt", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport(LibraryPath, EntryPoint = "sqlite3_interrupt", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void Interrupt(IntPtr db);
 
 		[DllImport(LibraryPath, EntryPoint = "sqlite3_errmsg16", CallingConvention=CallingConvention.Cdecl)]
