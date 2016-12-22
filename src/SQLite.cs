@@ -207,8 +207,8 @@ namespace SQLite
 		/// </param>
 		public SQLiteConnection (string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true)
 		{
-			if (string.IsNullOrEmpty (databasePath))
-				throw new ArgumentException ("Must be specified", "databasePath");
+			//if (string.IsNullOrEmpty (databasePath))
+			//	throw new ArgumentException ("Must be specified", "databasePath");
 
 			DatabasePath = databasePath;
 
