@@ -34,9 +34,6 @@
       <FixtureName>SQLite.Tests.BooleanTest</FixtureName>
     </FixtureTestSelector>
     <FixtureTestSelector>
-      <FixtureName>SQLite.Tests.ByteArrayTest</FixtureName>
-    </FixtureTestSelector>
-    <FixtureTestSelector>
       <FixtureName>SQLite.Tests.CollateTest</FixtureName>
     </FixtureTestSelector>
     <FixtureTestSelector>
