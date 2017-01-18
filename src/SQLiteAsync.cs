@@ -414,7 +414,7 @@ namespace SQLite
 		}
 	}
 
-	class SQLiteConnectionPool
+	public class SQLiteConnectionPool
 	{
 		class Entry
 		{
