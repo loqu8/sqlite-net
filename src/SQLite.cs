@@ -2388,7 +2388,7 @@ namespace SQLite
 
 						while (SQLite3.Step(stmt) == SQLite3.Result.Row)
 						{
-							var obj = new Dictionary<string, object>();
+							var obj = new Dictionary<string, object>(cols.Length);
 							for (int i = 0; i < cols.Length; i++)
 							{
 								var colType = SQLite3.ColumnType(stmt, i);
