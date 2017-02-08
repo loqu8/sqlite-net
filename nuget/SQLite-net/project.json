@@ -1,7 +1,7 @@
 ﻿{
   "supports": {},
   "dependencies": {
-    "Loqu8.SQLitePCLRaw.bundle_xsqlite3": "1.1.2",
+    "Loqu8.SQLitePCLRaw.bundle_xsqlite3": "1.1.3",
     "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
     "NETStandard.Library": "1.6.0"
   },
