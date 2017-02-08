@@ -119,7 +119,42 @@ namespace SQLite.Tests
 			Assert.AreEqual(numCount, n, "Num counted must = num objects");
         }
 
-        [Test]
+		[Test]
+		public void InsertALotDict()
+		{
+			int n = 10000;
+			var q = from i in Enumerable.Range(1, n)
+					select new TestObj()
+					{
+						Text = "I am"
+					};
+			var objs = q.ToArray();
+			_db.Trace = false;
+
+			var sw = new Stopwatch();
+			sw.Start();
+
+			var numIn = _db.InsertAll(objs);
+
+			sw.Stop();
+
+			Assert.AreEqual(numIn, n, "Num inserted must = num objects");
+
+			var inObjs = _db.CreateCommand("select * from TestObj").ExecuteQuery().ToArray();
+
+			for (var i = 0; i < inObjs.Length; i++)
+			{
+				Assert.AreEqual(i + 1, objs[i].Id);
+				Assert.AreEqual(i + 1, inObjs[i]["Id"]);
+				Assert.AreEqual("I am", inObjs[i]["Text"]);
+			}
+
+			var numCount = _db.CreateCommand("select count(*) from TestObj").ExecuteScalar<int>();
+
+			Assert.AreEqual(numCount, n, "Num counted must = num objects");
+		}
+
+		[Test]
         public void InsertTwoTimes()
         {
             var obj1 = new TestObj() { Text = "GLaDOS loves testing!" };
